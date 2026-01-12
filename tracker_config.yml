@@ -1,0 +1,7 @@
+NvDCF:
+  useUniqueID: 1
+  maxTargetsPerStream: 30
+  minDetectionConfidence: 0.3
+  minTrackingConfidence: 0.2
+  probationAge: 3
+  maxShadowTrackingAge: 30

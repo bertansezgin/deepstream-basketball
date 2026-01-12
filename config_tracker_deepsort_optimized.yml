@@ -1,0 +1,55 @@
+%YAML:1.0
+
+BaseConfig:
+  minDetectorConfidence: 0.3
+
+TargetManagement:
+  preserveStreamUpdateOrder: 0
+  maxTargetsPerStream: 30
+  minIouDiff4NewTarget: 0.8
+  minTrackerConfidence: 0.2
+  probationAge: 2
+  maxShadowTrackingAge: 100
+  earlyTerminationAge: 1
+
+TrajectoryManagement:
+  useUniqueID: 1
+
+DataAssociator:
+  dataAssociatorType: 0
+  associationMatcherType: 1
+  checkClassMatch: 1
+  thresholdMahalanobis: 15.0
+  minMatchingScore4Overall: 0.1
+  minMatchingScore4SizeSimilarity: 0.2
+  minMatchingScore4Iou: 0.15
+  minMatchingScore4ReidSimilarity: 0.5
+  matchingScoreWeight4SizeSimilarity: 0.3
+  matchingScoreWeight4Iou: 0.3
+  matchingScoreWeight4ReidSimilarity: 0.8
+  tentativeDetectorConfidence: 0.25
+  minMatchingScore4TentativeIou: 0.2
+
+StateEstimator:
+  stateEstimatorType: 2
+  noiseWeightVar4Loc: 0.1
+  noiseWeightVar4Vel: 0.01
+  useAspectRatio: 1
+
+ReID:
+  reidType: 1
+  batchSize: 100
+  workspaceSize: 1000
+  reidFeatureSize: 256
+  reidHistorySize: 150
+  inferDims: [3, 256, 128]
+  networkMode: 1
+  inputOrder: 0
+  colorFormat: 0
+  offsets: [123.675, 116.28, 103.53]
+  netScaleFactor: 0.01735207
+  keepAspc: 1
+  useVPICropScaler: 1
+  addFeatureNormalization: 1
+  onnxFile: "/opt/nvidia/deepstream/deepstream/samples/models/Tracker/reidentificationnet_vdeployable_v1.2/resnet50_market1501_aicity156.onnx"
+  modelEngineFile: "/opt/nvidia/deepstream/deepstream/samples/models/Tracker/resnet50_market1501_aicity156_b100_gpu0_fp16.engine"
