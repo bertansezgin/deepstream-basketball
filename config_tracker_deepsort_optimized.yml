@@ -25,8 +25,8 @@ DataAssociator:
   minMatchingScore4Iou: 0.15
   minMatchingScore4ReidSimilarity: 0.5
   matchingScoreWeight4SizeSimilarity: 0.3
-  matchingScoreWeight4Iou: 0.3
-  matchingScoreWeight4ReidSimilarity: 0.8
+  matchingScoreWeight4Iou: 0.5
+  matchingScoreWeight4ReidSimilarity: 0.4
   tentativeDetectorConfidence: 0.25
   minMatchingScore4TentativeIou: 0.2
 
@@ -38,6 +38,8 @@ StateEstimator:
 
 ReID:
   reidType: 1
+  outputReidTensor: 1
+  outputReidPath: "/tmp/deepstream_reid/"
   batchSize: 100
   workspaceSize: 1000
   reidFeatureSize: 256
@@ -52,4 +54,4 @@ ReID:
   useVPICropScaler: 1
   addFeatureNormalization: 1
   onnxFile: "/opt/nvidia/deepstream/deepstream/samples/models/Tracker/reidentificationnet_vdeployable_v1.2/resnet50_market1501_aicity156.onnx"
-  modelEngineFile: "/opt/nvidia/deepstream/deepstream/samples/models/Tracker/resnet50_market1501_aicity156_b100_gpu0_fp16.engine"
+  modelEngineFile: "/opt/nvidia/deepstream/deepstream/samples/models/Tracker/reidentificationnet_vdeployable_v1.2/resnet50_market1501_aicity156.onnx_b100_gpu0_fp16.engine"
